@@ -25,8 +25,8 @@ Vogliamo realizzare un servizio di calcolo delle spese di spedizione da mettere 
 - [x] Consegna Gratuita: Se la somma del costo dei prodotti nel carrello è almeno 100 il costo di consegna è 0
 - [x] Consegna espressa: Il prezzo è il prezzo della consegna standard +30%
 - [x] Regole geografiche: 
-    - [x] Italia -> Costo spedizione + 3
-    - [x]  Brasile -> Costo spedizione - 2% 
+    - [x] Italia & DHL -> Costo spedizione + 3
+    - [x]  Brasile & UPS -> Costo spedizione - 2% 
 - [x] Seleziona il costo di spedizione maggiore tra quelli ottenuti
 ### Costo per Peso
 
