@@ -31,9 +31,11 @@ const arr3 =[{
 },
 ]
 
-const cart1 = new Cart(arr1, 'brazil', 'dhl', 'express');
-const cart2 = new Cart(arr2, 'italy', 'ups', 'standard');
+const cart1 = new Cart(arr1, 'italy', 'dhl', 'express');
+const cart2 = new Cart(arr2, 'brazil', 'ups', 'standard');
 const cart3 = new Cart(arr3, 'congo', 'fedex', 'express');
+const cart4 = new Cart(arr1, 'italy', 'ups', 'express');
+const cart5 = new Cart(arr1, 'brazil', 'dhl', 'express');
 
 describe("Total Price of Cart", () => {
     it("Should return 8 for 2 product of cost of 4", () => expect(cart1.calcTotalPrice()).toBe(8))
@@ -54,8 +56,10 @@ describe("add express tax", () => {
 });
 
 describe("Add geographic tax", () => {
-    it("Should return 25.22 for brazil delivery tax (-3%)", () => expect(cart1.calcGeoTax()).toBe(25.22))
-    it("Should return 9.5 for italy delivery tax (+3)", () => expect(cart2.calcGeoTax()).toBe(9.5))
+    it("Should return 29 for italy with DHL (+3)", () => expect(cart1.calcGeoTax()).toBe(29))
+    it("Should return 27.3 for italy without DHL", () => expect(cart4.calcGeoTax()).toBe(27.3))
+    it("Should return 6.305 for brazil with UPS (-3%)", () => expect(cart2.calcGeoTax()).toBe(6.305))
+    it("Should return 6.5 for brazil  without UPS", () => expect(cart5.calcGeoTax()).toBe(26))
     it("Should return the delivery price for other country", () => expect(cart3.calcGeoTax()).toBe(31.2))
 });
 

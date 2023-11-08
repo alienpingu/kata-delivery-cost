@@ -48,12 +48,13 @@ export default class Cart {
   calcGeoTax = () => {
     const deliveryPrice = this.delivery === "standard" ? this.calcStandardDelivery() : this.calcExpressTax();
 
-    switch (this.destination) {
-      case "italy":
+    if (this.destination === 'italy' && this.courier === 'dhl') {
+        console.log(this.destination, this.courier, deliveryPrice);
         return deliveryPrice + 3;
-      case "brazil":
+    } else if (this.destination === 'brazil' && this.courier === 'ups') {
         return deliveryPrice - (0.03 * deliveryPrice);
-      default:
+    } else {
+        console.log(this.destination, this.courier, deliveryPrice);
         return deliveryPrice;
     }
   }
