@@ -17,18 +17,34 @@ const arr2 =[{
     weight: 1,
     price: 101
 }]
+const arr3 =[{
+    name: 'Fiat',
+    volume: 3,
+    weight: 4,
+    price: 50
+},
+{
+    name: 'Bongo',
+    volume: 4,
+    weight: 3,
+    price: 50
+},
+]
 
 const cart1 = new Cart(arr1, 'brazil', 'dhl', 'express');
 const cart2 = new Cart(arr2, 'italy', 'ups', 'standard');
+const cart3 = new Cart(arr3, 'congo', 'fedex', 'express');
 
 describe("Total Price of Cart", () => {
     it("Should return 8 for 2 product of cost of 4", () => expect(cart1.calcTotalPrice()).toBe(8))
     it("Should return 101 for 1 product of cost of 101", () => expect(cart2.calcTotalPrice()).toBe(101))
+    it("Should return 100 for 2 product of cost of 50", () => expect(cart3.calcTotalPrice()).toBe(100))
 });
 
 describe("Total Standard Delivery", () => {
     it("Should return 20 as total for v = 6 & w = 10 w/ dhl", () => expect(cart1.calcStandardDelivery()).toBe(20))
     it("Should return 6.5 as total for v = 1 & w = 1 w/ ups", () => expect(cart2.calcStandardDelivery()).toBe(6.5))
+    it("Should return 24 as total for v = 7 & w = 7 w/ ups", () => expect(cart3.calcStandardDelivery()).toBe(24))
 });
 
 describe("add express tax", () => {
