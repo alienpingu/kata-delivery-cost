@@ -50,11 +50,13 @@ describe("Total Standard Delivery", () => {
 describe("add express tax", () => {
     it("Should return 26 for a standard delivery of 20", () => expect(cart1.calcExpressTax()).toBe(26))
     it("Should return 8.45 for a standard delivery of 6.5", () => expect(cart2.calcExpressTax()).toBe(8.45))
+    it("Should return 24 for a standard delivery of 31.2", () => expect(cart3.calcExpressTax()).toBe(31.2))
 });
 
 describe("Add geographic tax", () => {
     it("Should return 25.22 for brazil delivery tax (-3%)", () => expect(cart1.calcGeoTax()).toBe(25.22))
     it("Should return 9.5 for italy delivery tax (+3)", () => expect(cart2.calcGeoTax()).toBe(9.5))
+    it("Should return the delivery price for other country", () => expect(cart3.calcGeoTax()).toBe(31.2))
 });
 
 describe("Check for free delivery", () => {
