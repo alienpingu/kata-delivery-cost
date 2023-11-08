@@ -12,7 +12,7 @@ const arr1 =[{
     price: 4
 }]
 const arr2 =[{
-    name: 'iphone',
+    name: 'washing machine',
     volume: 1,
     weight: 1,
     price: 101
@@ -28,17 +28,17 @@ describe("Total Price of Cart", () => {
 
 describe("Total Standard Delivery", () => {
     it("Should return 20 as total for v = 6 & w = 10 w/ dhl", () => expect(cart1.calcStandardDelivery()).toBe(20))
-    it("Should return 7 as total for v = 1 & w = 1 w/ ups", () => expect(cart2.calcStandardDelivery()).toBe(7))
+    it("Should return 6.5 as total for v = 1 & w = 1 w/ ups", () => expect(cart2.calcStandardDelivery()).toBe(6.5))
 });
 
 describe("add express tax", () => {
     it("Should return 26 for a standard delivery of 20", () => expect(cart1.calcExpressTax()).toBe(26))
-    it("Should return 9.1 for a standard delivery of 7", () => expect(cart2.calcExpressTax()).toBe(9.1))
+    it("Should return 8.45 for a standard delivery of 6.5", () => expect(cart2.calcExpressTax()).toBe(8.45))
 });
 
 describe("Add geographic tax", () => {
     it("Should return 25.22 for brazil delivery tax (-3%)", () => expect(cart1.calcGeoTax()).toBe(25.22))
-    it("Should return 10 for italy delivery tax (+3)", () => expect(cart2.calcGeoTax()).toBe(10))
+    it("Should return 9.5 for italy delivery tax (+3)", () => expect(cart2.calcGeoTax()).toBe(9.5))
 });
 
 describe("Check for free delivery", () => {
