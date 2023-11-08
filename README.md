@@ -21,12 +21,12 @@ Vogliamo realizzare un servizio di calcolo delle spese di spedizione da mettere 
 
 ## Rules
 
-- [ ] Consegna Standard: Calcola il peso volumetrico e il peso totale del carrello, quello che costa di più è il costo finale della spedizione 
-- [ ] Consegna Gratuita: Se la somma del costo dei prodotti nel carrello è almeno 100 il costo di consegna è 0
-- [ ] Consegna espressa: Il prezzo è il prezzo della consegna standard +30%
-- [ ] Regole geografiche: 
-    - [ ] UPS: Italia -> Costo spedizione + 3
-    - [ ] DHL: Brasile -> Costo spedizione - 2% 
+- [x] Consegna Standard: Calcola il peso volumetrico e il peso totale del carrello, quello che costa di più è il costo finale della spedizione 
+- [x] Consegna Gratuita: Se la somma del costo dei prodotti nel carrello è almeno 100 il costo di consegna è 0
+- [x] Consegna espressa: Il prezzo è il prezzo della consegna standard +30%
+- [x] Regole geografiche: 
+    - [x] UPS: Italia -> Costo spedizione + 3
+    - [x] DHL: Brasile -> Costo spedizione - 2% 
 
 ### Costo per Peso
 
