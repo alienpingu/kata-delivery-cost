@@ -1,7 +1,7 @@
 {
-  "name": "boilerplate-ts-node-jest",
+  "name": "kata-tdd-deliverycost",
   "version": "1.0.0",
-  "description": "Boilerplate to develop on nodejs in Typescript with TDD with Jest",
+  "description": "Calcolate the delivery cost, use TDD for Unit Testing",
   "main": "index.js",
   "scripts": {
     "test": "jest",

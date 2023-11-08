@@ -1,1 +1,1 @@
-console.log("Boilerplate TS Jest");
+console.log("KATA Delivery Cost TDD");
